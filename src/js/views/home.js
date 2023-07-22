@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import rigoImage from "../../img/rigo-baby.jpg";
 import "../../styles/home.css";
 import { Card } from "../component/card.jsx";
 
@@ -17,8 +16,8 @@ export const Home = () => {
 	},[])
 
 	return(	characters.map((character,idx)=>(
-		<Card key={idx} name = {character.name} />
-	)));
+		<Card key={idx}  name = {character.name} gender={character.gender} hairColor={character.hair_color}/>
+		)));
 	
-console.log(characters)	
+
 };
