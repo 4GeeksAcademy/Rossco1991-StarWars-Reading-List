@@ -5,15 +5,17 @@ import { Card } from "../component/card.jsx";
 export const Home = () => {
   const [characters, setCharacters] = useState([]);
   const [planets, setPlanets] = useState([]);
-  const [starships, setStarships] = useState([]);
+  const [vehicles, setVehicles] = useState([]);
 
   useEffect(async () => {
-    const result = await Promise.all(
-      ["people", "planets", "starships"].map((url) =>
+    const result = await Promise.allSettled(
+      ["people", "planets", "vehicles"].map((url) =>
         fetch(`https://swapi.dev/api/${url}`)
       )
     );
-    const data = await Promise.all(result.map((resp) => resp.json()));
+    const data = await Promise.allSettled(result.map())
+
+ 
   }, []);
 
   return characters.map((character, idx) => (
@@ -24,6 +26,7 @@ export const Home = () => {
       }.jpg`}
     >
       <h5 className="card-title">{character.name}</h5>
+
       <ul className="list-group">
         <li className="list-group-item">Gender: {character.gender}</li>
         <li className="list-group-item">Hair Color: {character.hair_color}</li>
