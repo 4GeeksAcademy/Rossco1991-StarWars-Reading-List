@@ -12,7 +12,10 @@ const getState = ({ getStore, getActions, setStore }) => {
 					background: "white",
 					initial: "white"
 				}
-			]
+			],
+			characters: [],
+			vehicles: [],
+			planets: []
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
@@ -23,6 +26,10 @@ const getState = ({ getStore, getActions, setStore }) => {
 				/**
 					fetch().then().then(data => setStore({ "foo": data.bar }))
 				*/
+				fetch(`https://swapi.dev/api/people/`).then((resp) => resp.json()).then(data => setStore({ "characters": data.results }))
+				fetch(`https://swapi.dev/api/planets/`).then((resp) => resp.json()).then(data => setStore({ "planets": data.results }))
+				fetch(`https://swapi.dev/api/vehicles/`).then((resp) => resp.json()).then(data => setStore({ "vehicles": data.results }))
+			
 			},
 			changeColor: (index, color) => {
 				//get the store
