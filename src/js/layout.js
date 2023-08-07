@@ -24,7 +24,11 @@ const Layout = () => {
 					<Navbar />
 					<Routes>
 						<Route element={<Character/>} path="/characters/:char_id" />
-						<Route path="/" element={<Home />} />
+						<Route path="/" element={
+							<div className="container d-grid flex-direction-row">
+								<Home/>
+							</div>
+						} />
 						<Route path="/demo" element={<Demo />} />
 						<Route path="/single/:theid" element={<Single />} />
 						<Route path="*" element={<h1>Not found!</h1>} />
