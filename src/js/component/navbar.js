@@ -9,9 +9,12 @@ export const Navbar = () => {
 					<i class="fa-solid fa-book-journal-whills fa-2xl ms-3"></i>
 				</span>
 			</Link>
+			<div className="text-center">
+				<h2 className="text-success">Star Wars Listed</h2>
+			</div>
 			<div className="ml-auto">
 				<Link to="/demo">
-					<button className="btn btn-primary">Check the Context in action</button>
+					<button className="btn btn-primary me-2">Favorite!</button>
 				</Link>
 			</div>
 		</nav>
