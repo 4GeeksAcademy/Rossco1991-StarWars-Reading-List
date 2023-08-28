@@ -5,10 +5,10 @@ import "../../styles/home.css";
 import { Context } from "../store/appContext.js";
 
 export const Middle = () => {
-    const [store, actions] = useContext(Context)
+    const {store, actions} = useContext(Context)
 
-    return <>
-    <div className="container d-flex flex-direction row">
+    return(
+  <div className="container d-flex overflow-auto col-10 mb-3">
     {store.planets && store.planets.map((planets, idx) => (
         <Card
           key={idx}
@@ -35,5 +35,5 @@ export const Middle = () => {
         </Card>
       ))}
       </div>
-      </>
+    )
 }

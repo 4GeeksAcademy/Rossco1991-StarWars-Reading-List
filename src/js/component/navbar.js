@@ -6,7 +6,7 @@ export const Navbar = () => {
 		<nav className="navbar navbar-light bg-light mb-3">
 			<Link to="/">
 				<span className="navbar-brand mb-0 h1">
-					<i class="fa-solid fa-book-journal-whills fa-2xl ms-3"></i>
+					<i className="fa-solid fa-book-journal-whills fa-2xl ms-3"></i>
 				</span>
 			</Link>
 			<div className="text-center">

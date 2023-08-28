@@ -1,18 +1,15 @@
 import React, { useContext } from "react";
 import "../../styles/home.css";
-import { Card } from "../component/card.jsx";
 import { Top } from "../component/top.jsx";
-import { Context } from "../store/appContext";
-import { Middle } from "../component/middle";
+import { Middle } from "../component/middle.jsx";
+import { End } from "../component/end.jsx";
 
 export const Home = () => {
 
-  const { store, actions } = useContext(Context);
-
-  return  
-  <>
+  return(
+    <div>
     <Top/>
     <Middle/>
     <End/>
-    </>
-};
+    </div>
+  )};
