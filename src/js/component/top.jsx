@@ -3,6 +3,7 @@ import "../../styles/home.css";
 import { Card } from "../component/card.jsx";
 import { Link } from "react-router-dom";
 
+
 import { Context } from "../store/appContext";
 
 export const Top = () => {
@@ -26,9 +27,10 @@ export const Top = () => {
           </ul>
           <span>
             <a className="btn btn-outline-primary">
-              Learn More!
-              
-              </a>
+              <Link to="/characters/:char_id">
+                Learn More!
+              </Link>
+            </a>
             <a className="btn btn-outline-warning">
               <i className="fa-regular fa-heart"></i>
             </a>

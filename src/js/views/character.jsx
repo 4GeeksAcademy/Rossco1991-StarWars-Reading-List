@@ -16,7 +16,9 @@ export const Character = () => {
   return (
     <div className="mt-5">
     <Card
-      img={`https://starwars-visualguide.com/assets/img/characters/${char_id}.jpg`}
+      img={`https://starwars-visualguide.com/assets/img/characters/${
+        characters.url.split("/")[5]
+      }.jpg`}
     >
       <h4 className="card-title text center">{character.name}</h4>
       <ul className="list-group text-left">
@@ -32,7 +34,7 @@ export const Character = () => {
       </ul>
       <span className="d-flex mt-2">
       <a className="btn btn-outline-warning">
-      <i class="fa-regular fa-heart"></i>
+      <i className="fa-regular fa-heart"></i>
       </a>
       </span>
     </Card>
