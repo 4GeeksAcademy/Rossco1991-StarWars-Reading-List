@@ -13,9 +13,7 @@ export const Navbar = () => {
 				<h2 className="text-success">Star Wars Listed</h2>
 			</div>
 			<div className="ml-auto">
-				<Link to="/demo">
 					<button className="btn btn-primary me-2">Favorite!</button>
-				</Link>
 			</div>
 		</nav>
 	);

@@ -1,15 +1,15 @@
-import React, { useContext } from "react";
+import React from "react";
 import "../../styles/home.css";
 import { Top } from "../component/top.jsx";
 import { Middle } from "../component/middle.jsx";
 import { End } from "../component/end.jsx";
 
 export const Home = () => {
-
-  return(
+  return (
     <div>
-    <Top/>
-    <Middle/>
-    <End/>
+      <Top />
+      <Middle />
+      <End />
     </div>
-  )};
+  );
+};
