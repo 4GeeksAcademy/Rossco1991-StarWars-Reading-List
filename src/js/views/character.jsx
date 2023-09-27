@@ -2,12 +2,12 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
 export const Character = () => {
-  const { char_id } = useParams();
+  const { char_id } = useParams('');
   const [character, setCharacter] = useState({});
 
   useEffect(() => {
     async function getCharacters() {
-      const response = await fetch(`https://swapi.dev/api/people/${char_id}`);
+      const response = await fetch(`https://swapi.dev/api/people/${char_id}/`);
       const data = await response.json();
       setCharacter(data);
     }
@@ -16,9 +16,9 @@ export const Character = () => {
 
   return (
     <div className="container-fluid">
-      {/* <img
-        src={`https://starwars-visualguide.com/assets/img/characters/${character.id}.jpg`}
-      /> */}
+      <img
+        src={`https://starwars-visualguide.com/assets/img/characters/${char_id}.jpg`}
+      />
       <div className="header">
         <h1>{character.name}</h1>
       </div>

@@ -7,6 +7,7 @@ import { End } from "../component/end.jsx";
 export const Home = () => {
   return (
     <div>
+      
       <Top />
       <Middle />
       <End />
