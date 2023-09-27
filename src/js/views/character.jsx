@@ -16,21 +16,25 @@ export const Character = () => {
 
   return (
     <div className="container-fluid">
-      <img
-        src={`https://starwars-visualguide.com/assets/img/characters/${
-          characters.url.split("/")[5]
-        }.jpg`}
-      />
-      <h1>{character.name}</h1>
-      <p>
-        Sed viverra vulputate lacinia. Nullam a libero feugiat, tempor dui sit
-        amet, tincidunt neque. Mauris molestie ac ipsum a imperdiet. Nam vitae
-        ullamcorper metus, vel ullamcorper odio. Nulla cursus velit vitae nulla
-        convallis mattis. Aliquam cursus lacus eu orci aliquet, id tincidunt
-        enim luctus. Pellentesque ac efficitur turpis. Nunc sit amet urna ut
-        libero finibus fringilla eleifend vel risus. Fusce nec iaculis eros.
-        Nulla et turpis lobortis mi venenatis iaculis
-      </p>
+      {/* <img
+        src={`https://starwars-visualguide.com/assets/img/characters/${character.id}.jpg`}
+      /> */}
+      <div className="header">
+        <h1>{character.name}</h1>
+      </div>
+      <div className="body">
+        <p>Description</p>
+      </div>
+      <div className="footer">
+        <p>{character.height}</p>
+        <p>{character.mass}</p>
+        <p>{character.hair_color}</p>
+        <p>{character.skin_color}</p>
+        <p>{character.eye_color}</p>
+        <p>{character.birth_year}</p>
+        <p>{character.gender}</p>
+        <p>{character.homeworld}</p>
+      </div>
     </div>
   );
 };
