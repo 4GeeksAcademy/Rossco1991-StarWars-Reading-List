@@ -35,7 +35,7 @@ export const End = () => {
               vehicles.url.split("/")[5]
             }.jpg`}
           >
-            <h5 className="card-title">{vehicles.name}</h5>
+            <h5 className="card-title text-center">{vehicles.name}</h5>
             <span className="d-flex justify-content-between">
               <a className="btn btn-outline-primary">
                 <Link to={`/vehicles/${vehicles.uid}`}>Learn More!</Link>

@@ -45,32 +45,32 @@ export const Character = () => {
         </p>
         <span className="d-flex flex-row text-primary justify-content-sm-between">
           <h4>
-            Height: <br />
-            {character.height}
+            Diameter: <br />
+            {planet.diameter}
           </h4>
           <h4>
-            Mass: <br />
-            {character.mass}
+            Rotation Period: <br />
+            {planet.rotation_period}
           </h4>
           <h4>
-            Hair Color: <br />
-            {character.hair_color}
+            Orbital Period: <br />
+            {planet.orbital_period}
           </h4>
           <h4>
-            Skin Color: <br />
-            {character.skin_color}
+            Gravity: <br />
+            {planet.gravity}
           </h4>
           <h4>
-            Eye Color: <br />
-            {character.eye_color}
+            Climate: <br />
+            {planet.climate}
           </h4>
           <h4>
-            Birth Year: <br />
-            {character.birth_year}
+            Terrain: <br />
+            {planet.terrain}
           </h4>
           <h4>
-            Gender: <br />
-            {character.gender}
+            Surface Water: <br />
+            {planet.surface_water}
           </h4>
         </span>
       </div>

@@ -34,7 +34,7 @@ export const Top = () => {
               characters.url.split("/")[5]
             }.jpg`}
           >
-            <h5 className="card-title">{characters.name}</h5>
+            <h5 className="card-title text-center">{characters.name}</h5>
             <span className=" d-flex justify-content-between">
               <a className="btn btn-outline-primary">
                 <Link to={`/character/${characters.uid}`}>Learn More!</Link>

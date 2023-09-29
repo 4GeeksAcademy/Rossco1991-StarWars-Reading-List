@@ -19,7 +19,7 @@ export const Middle = () => {
               planets.url.split("/")[5]
             }.jpg`}
           >
-            <h5 className="card-title">{planets.name}</h5>
+            <h5 className="card-title text-center">{planets.name}</h5>
             <span className="d-flex justify-content-between">
               <a className="btn btn-outline-primary">
                 <Link to={`/planets/${planets.uid}`}>Learn More!</Link>
