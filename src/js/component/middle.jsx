@@ -1,11 +1,13 @@
 import React from "react";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Card } from "./card.jsx";
 import "../../styles/home.css";
 import { Context } from "../store/appContext.js";
+import { Link } from "react-router-dom";
 
 export const Middle = () => {
   const { store, actions } = useContext(Context);
+  const [liked, setLiked] = useState(false);
 
   return (
     <div className="container d-flex overflow-auto col-10 mb-3">
@@ -18,17 +20,21 @@ export const Middle = () => {
             }.jpg`}
           >
             <h5 className="card-title">{planets.name}</h5>
-
-            <ul className="list-group">
-              <li className="list-group-item">{}</li>
-              <li className="list-group-item"></li>
-
-              <li className="list-group-item"></li>
-            </ul>
-            <span className="d-flex justify-content-space-between">
-              <a className="btn btn-outline-primary">Learn More!</a>
-              <a className="btn btn-outline-warning">
-                <i class="fa-regular fa-heart"></i>
+            <span className="d-flex justify-content-between">
+              <a className="btn btn-outline-primary">
+                <Link to={`/planets/${planets.uid}`}>Learn More!</Link>
+              </a>
+              <a
+                className="btn btn-outline-warning"
+                onClick={() => {
+                  actions.setFavorite(setLiked);
+                }}
+              >
+                {liked ? (
+                  <i className="fa-solid fa-heart">{liked}</i>
+                ) : (
+                  <i className="fa-regular fa-heart"></i>
+                )}
               </a>
             </span>
           </Card>

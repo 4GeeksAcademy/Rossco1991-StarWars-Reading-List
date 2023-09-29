@@ -1,14 +1,31 @@
 import React from "react";
 import { Context } from "../store/appContext";
 import { Card } from "./card.jsx";
-import { useContext } from "react";
+import { useContext, useState, useEffect } from "react";
 import "../../styles/home.css";
+import { Link } from "react-router-dom";
 
 export const End = () => {
- 
-    const {store, actions} = useContext(Context);
+  const { store, actions } = useContext(Context);
+  const [liked, setLiked] = useState(false);
 
-  return(
+  useEffect(() => {
+    if (
+      store.favorites.find((x) => {
+        for (let i in x) {
+          if (vehicles[i] && vehicles[i].name === x[i].name) {
+            return true;
+          }
+        }
+      })
+    ) {
+      setLiked(true);
+    } else {
+      setLiked(false);
+    }
+  }, [store.favorites]);
+
+  return (
     <div className="container d-flex overflow-auto col-10 mb-3">
       {store.vehicles &&
         store.vehicles.map((vehicles, idx) => (
@@ -19,21 +36,25 @@ export const End = () => {
             }.jpg`}
           >
             <h5 className="card-title">{vehicles.name}</h5>
-
-            <ul className="list-group">
-              <li className="list-group-item">Model: {vehicles.model}</li>
-              <li className="list-group-item">Length: {vehicles.length}</li>
-
-              <li className="list-group-item">Crew: {vehicles.crew}</li>
-            </ul>
-            <span className="d-flex justify-content-space-between">
-              <a className="btn btn-outline-primary">Learn More!</a>
-              <a className="btn btn-outline-warning">
-                <i class="fa-regular fa-heart"></i>
+            <span className="d-flex justify-content-between">
+              <a className="btn btn-outline-primary">
+                <Link to={`/vehicles/${vehicles.uid}`}>Learn More!</Link>
               </a>
+              <button
+                className="btn btn-outline-warning"
+                style={{
+                  background: "transparent",
+                  outline: "solid",
+                }}
+                onClick={() => {
+                  actions.setFavorite(vehicles);
+                }}
+              >
+                <i className="fa-regular fa-heart"></i>
+              </button>
             </span>
           </Card>
         ))}
     </div>
-  )
-}
+  );
+};
