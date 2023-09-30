@@ -1,25 +1,24 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
-export const Character = () => {
+export const Planets = () => {
   const { plan_id } = useParams();
   const [planet, setPlanet] = useState({});
 
-  console.log(char_id, "id");
   useEffect(() => {
-    async function getCharacters() {
+    async function getPlanets() {
       const response = await fetch(`https://swapi.tech/api/planets/${plan_id}`);
       const data = await response.json();
       setPlanet(data.result.properties);
     }
-    getCharacters();
+    getPlanets();
   }, []);
 
   return (
     <div className="container-fluid d-flex">
       {planet ? (
         <img
-          src={`https://starwars-visualguide.com/assets/img/characters/${plan_id}.jpg`}
+          src={`https://starwars-visualguide.com/assets/img/planets/${plan_id}.jpg`}
           className="img-fluid rounded mx-auto"
         />
       ) : (
