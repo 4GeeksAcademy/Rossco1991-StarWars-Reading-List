@@ -36,9 +36,9 @@ export const Top = () => {
           >
             <h5 className="card-title text-center">{characters.name}</h5>
             <span className=" d-flex justify-content-between">
-              <a className="btn btn-outline-primary">
-                <Link to={`/character/${characters.uid}`}>Learn More!</Link>
-              </a>
+            <Link to={`/character/${characters.uid}`}>
+                <button className="btn btn-outline-primary">Learn More!</button>
+              </Link>
               <button
                 className="btn btn-outline-warning"
                 style={{

@@ -21,9 +21,9 @@ export const Middle = () => {
           >
             <h5 className="card-title text-center">{planets.name}</h5>
             <span className="d-flex justify-content-between">
-              <a className="btn btn-outline-primary">
-                <Link to={`/planets/${planets.uid}`}>Learn More!</Link>
-              </a>
+              <Link to={`/planet/${planets.uid}`}>
+                <button className="btn btn-outline-primary">Learn More!</button>
+              </Link>
               <a
                 className="btn btn-outline-warning"
                 onClick={() => {
